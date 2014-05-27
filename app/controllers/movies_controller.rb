@@ -9,7 +9,7 @@ class MoviesController < ApplicationController
   def index
     @sort_order = params[:order_by] || session[:order_by]
     @all_ratings = Movie.all_ratings
-    @selected_ratings = params[:ratings]
+    @selected_ratings = params[:ratings] || session[:ratings]
 
     @prev_sort = @sort_order || 'none'
 
